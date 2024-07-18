@@ -1,15 +1,12 @@
 from github import Github
 import os
 
-# Seu username do github
-username = "eltnas"
-
-# Seu token de acesso do GitHub
-# Site: https://github.com/settings/tokens
+# username e token do github
+username = ""
 token = ""  
 
 # Diretório
-destination_folder = "Github"
+folder_de_destino = "Github"
 
 
 g = Github(token)
@@ -20,7 +17,7 @@ for repo in repos:
     repo_name = repo.name
     repo_url = repo.clone_url
 
-    repo_path = os.path.join(destination_folder, repo_name)
+    repo_path = os.path.join(folder_de_destino, repo_name)
 
     if os.path.exists(repo_path):
         print(f"O repositório '{repo_name}' já existe. Pulando...")
